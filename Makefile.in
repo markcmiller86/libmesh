@@ -10371,6 +10371,8 @@ mostlyclean-compile:
 	-rm -f src/base/libmesh_dbg_la-dof_object.lo
 	-rm -f src/base/libmesh_dbg_la-libmesh.$(OBJEXT)
 	-rm -f src/base/libmesh_dbg_la-libmesh.lo
+	-rm -f src/base/libmesh_dbg_la-libmesh_common.$(OBJEXT)
+	-rm -f src/base/libmesh_dbg_la-libmesh_common.lo
 	-rm -f src/base/libmesh_dbg_la-libmesh_isnan.$(OBJEXT)
 	-rm -f src/base/libmesh_dbg_la-libmesh_isnan.lo
 	-rm -f src/base/libmesh_dbg_la-libmesh_singleton.$(OBJEXT)
@@ -10397,6 +10399,8 @@ mostlyclean-compile:
 	-rm -f src/base/libmesh_devel_la-dof_object.lo
 	-rm -f src/base/libmesh_devel_la-libmesh.$(OBJEXT)
 	-rm -f src/base/libmesh_devel_la-libmesh.lo
+	-rm -f src/base/libmesh_devel_la-libmesh_common.$(OBJEXT)
+	-rm -f src/base/libmesh_devel_la-libmesh_common.lo
 	-rm -f src/base/libmesh_devel_la-libmesh_isnan.$(OBJEXT)
 	-rm -f src/base/libmesh_devel_la-libmesh_isnan.lo
 	-rm -f src/base/libmesh_devel_la-libmesh_singleton.$(OBJEXT)
@@ -10423,6 +10427,8 @@ mostlyclean-compile:
 	-rm -f src/base/libmesh_oprof_la-dof_object.lo
 	-rm -f src/base/libmesh_oprof_la-libmesh.$(OBJEXT)
 	-rm -f src/base/libmesh_oprof_la-libmesh.lo
+	-rm -f src/base/libmesh_oprof_la-libmesh_common.$(OBJEXT)
+	-rm -f src/base/libmesh_oprof_la-libmesh_common.lo
 	-rm -f src/base/libmesh_oprof_la-libmesh_isnan.$(OBJEXT)
 	-rm -f src/base/libmesh_oprof_la-libmesh_isnan.lo
 	-rm -f src/base/libmesh_oprof_la-libmesh_singleton.$(OBJEXT)
@@ -10449,6 +10455,8 @@ mostlyclean-compile:
 	-rm -f src/base/libmesh_opt_la-dof_object.lo
 	-rm -f src/base/libmesh_opt_la-libmesh.$(OBJEXT)
 	-rm -f src/base/libmesh_opt_la-libmesh.lo
+	-rm -f src/base/libmesh_opt_la-libmesh_common.$(OBJEXT)
+	-rm -f src/base/libmesh_opt_la-libmesh_common.lo
 	-rm -f src/base/libmesh_opt_la-libmesh_isnan.$(OBJEXT)
 	-rm -f src/base/libmesh_opt_la-libmesh_isnan.lo
 	-rm -f src/base/libmesh_opt_la-libmesh_singleton.$(OBJEXT)
@@ -10475,6 +10483,8 @@ mostlyclean-compile:
 	-rm -f src/base/libmesh_prof_la-dof_object.lo
 	-rm -f src/base/libmesh_prof_la-libmesh.$(OBJEXT)
 	-rm -f src/base/libmesh_prof_la-libmesh.lo
+	-rm -f src/base/libmesh_prof_la-libmesh_common.$(OBJEXT)
+	-rm -f src/base/libmesh_prof_la-libmesh_common.lo
 	-rm -f src/base/libmesh_prof_la-libmesh_isnan.$(OBJEXT)
 	-rm -f src/base/libmesh_prof_la-libmesh_isnan.lo
 	-rm -f src/base/libmesh_prof_la-libmesh_singleton.$(OBJEXT)
@@ -16473,9 +16483,10 @@ src/base/libmesh_dbg_la-libmesh.lo: src/base/libmesh.C
 src/base/libmesh_dbg_la-libmesh_common.lo: src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_dbg_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_dbg_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_dbg_la-libmesh_common.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_dbg_la-libmesh_common.Tpo -c -o src/base/libmesh_dbg_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/base/$(DEPDIR)/libmesh_dbg_la-libmesh_common.Tpo src/base/$(DEPDIR)/libmesh_dbg_la-libmesh_common.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/base/libmesh_common.C' object='src/base/libmesh_dbg_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/base/libmesh_common.C' object='src/base/libmesh_dbg_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_dbg_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_dbg_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_dbg_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_dbg_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_dbg_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_dbg_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 
 src/base/libmesh_dbg_la-libmesh_singleton.lo: src/base/libmesh_singleton.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_dbg_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_dbg_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_dbg_la-libmesh_singleton.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_dbg_la-libmesh_singleton.Tpo -c -o src/base/libmesh_dbg_la-libmesh_singleton.lo `test -f 'src/base/libmesh_singleton.C' || echo '$(srcdir)/'`src/base/libmesh_singleton.C
@@ -19679,9 +19690,10 @@ src/base/libmesh_devel_la-libmesh.lo: src/base/libmesh.C
 src/base/libmesh_devel_la-libmesh_common.lo: src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_devel_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_devel_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_devel_la-libmesh_common.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_devel_la-libmesh_common.Tpo -c -o src/base/libmesh_devel_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/base/$(DEPDIR)/libmesh_devel_la-libmesh_common.Tpo src/base/$(DEPDIR)/libmesh_devel_la-libmesh_common.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/base/libmesh_common.C' object='src/base/libmesh_devel_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/base/libmesh_common.C' object='src/base/libmesh_devel_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_devel_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_devel_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_devel_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_devel_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_devel_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_devel_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 
 src/base/libmesh_devel_la-libmesh_singleton.lo: src/base/libmesh_singleton.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_devel_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_devel_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_devel_la-libmesh_singleton.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_devel_la-libmesh_singleton.Tpo -c -o src/base/libmesh_devel_la-libmesh_singleton.lo `test -f 'src/base/libmesh_singleton.C' || echo '$(srcdir)/'`src/base/libmesh_singleton.C
@@ -22885,9 +22897,10 @@ src/base/libmesh_oprof_la-libmesh.lo: src/base/libmesh.C
 src/base/libmesh_oprof_la-libmesh_common.lo: src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_oprof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_oprof_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_oprof_la-libmesh_common.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_oprof_la-libmesh_common.Tpo -c -o src/base/libmesh_oprof_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/base/$(DEPDIR)/libmesh_oprof_la-libmesh_common.Tpo src/base/$(DEPDIR)/libmesh_oprof_la-libmesh_common.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/base/libmesh_common.C' object='src/base/libmesh_oprof_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/base/libmesh_common.C' object='src/base/libmesh_oprof_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_oprof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_oprof_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_oprof_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_oprof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_oprof_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_oprof_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 
 src/base/libmesh_oprof_la-libmesh_singleton.lo: src/base/libmesh_singleton.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_oprof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_oprof_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_oprof_la-libmesh_singleton.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_oprof_la-libmesh_singleton.Tpo -c -o src/base/libmesh_oprof_la-libmesh_singleton.lo `test -f 'src/base/libmesh_singleton.C' || echo '$(srcdir)/'`src/base/libmesh_singleton.C
@@ -26091,9 +26104,10 @@ src/base/libmesh_opt_la-libmesh.lo: src/base/libmesh.C
 src/base/libmesh_opt_la-libmesh_common.lo: src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_opt_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_opt_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_opt_la-libmesh_common.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_opt_la-libmesh_common.Tpo -c -o src/base/libmesh_opt_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/base/$(DEPDIR)/libmesh_opt_la-libmesh_common.Tpo src/base/$(DEPDIR)/libmesh_opt_la-libmesh_common.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/base/libmesh_common.C' object='src/base/libmesh_opt_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/base/libmesh_common.C' object='src/base/libmesh_opt_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_opt_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_opt_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_opt_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_opt_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_opt_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_opt_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 
 src/base/libmesh_opt_la-libmesh_singleton.lo: src/base/libmesh_singleton.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_opt_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_opt_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_opt_la-libmesh_singleton.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_opt_la-libmesh_singleton.Tpo -c -o src/base/libmesh_opt_la-libmesh_singleton.lo `test -f 'src/base/libmesh_singleton.C' || echo '$(srcdir)/'`src/base/libmesh_singleton.C
@@ -29297,9 +29311,10 @@ src/base/libmesh_prof_la-libmesh.lo: src/base/libmesh.C
 src/base/libmesh_prof_la-libmesh_common.lo: src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_prof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_prof_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_prof_la-libmesh_common.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_prof_la-libmesh_common.Tpo -c -o src/base/libmesh_prof_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) src/base/$(DEPDIR)/libmesh_prof_la-libmesh_common.Tpo src/base/$(DEPDIR)/libmesh_prof_la-libmesh_common.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='src/base/libmesh_common.C' object='src/base/libmesh_prof_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='src/base/libmesh_common.C' object='src/base/libmesh_prof_la-libmesh_common.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_prof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_prof_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_prof_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
+@am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_prof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_prof_la_CXXFLAGS) $(CXXFLAGS) -c -o src/base/libmesh_prof_la-libmesh_common.lo `test -f 'src/base/libmesh_common.C' || echo '$(srcdir)/'`src/base/libmesh_common.C
 
 src/base/libmesh_prof_la-libmesh_singleton.lo: src/base/libmesh_singleton.C
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libmesh_prof_la_CPPFLAGS) $(CPPFLAGS) $(libmesh_prof_la_CXXFLAGS) $(CXXFLAGS) -MT src/base/libmesh_prof_la-libmesh_singleton.lo -MD -MP -MF src/base/$(DEPDIR)/libmesh_prof_la-libmesh_singleton.Tpo -c -o src/base/libmesh_prof_la-libmesh_singleton.lo `test -f 'src/base/libmesh_singleton.C' || echo '$(srcdir)/'`src/base/libmesh_singleton.C
