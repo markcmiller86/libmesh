@@ -187,6 +187,7 @@ include_HEADERS =  \
         mesh/patch.h \
         mesh/postscript_io.h \
         mesh/serial_mesh.h \
+        mesh/silo_io.h \
         mesh/tecplot_io.h \
         mesh/tetgen_io.h \
         mesh/ucd_io.h \
