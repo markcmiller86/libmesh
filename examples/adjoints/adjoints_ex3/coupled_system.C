@@ -391,8 +391,6 @@ void CoupledSystem::postprocess()
   // We need to overload the postprocess function to set the computed_QoI variable of the CoupledSystem class
   // to the qoi value stored in System::qoi[0]
 
-  computed_QoI = 0.0;
-
   computed_QoI = System::qoi[0];
 }
 

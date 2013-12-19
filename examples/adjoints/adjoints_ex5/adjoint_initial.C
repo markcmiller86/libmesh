@@ -39,11 +39,7 @@ Number adjoint_initial_value(const Point& p,
 {
   Real x = p(0), y = p(1);
 
-  Number val = 0.;
-
-  val = sin(M_PI * x) * sin(M_PI * y);
-
-  return val;
+  return (sin(M_PI * x) * sin(M_PI * y));
 }
 
 

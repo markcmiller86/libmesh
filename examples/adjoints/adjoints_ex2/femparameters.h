@@ -36,8 +36,6 @@ public:
 
     void read(GetPot &input);
 
-    unsigned int dimension;
-    Real elementorder;
     std::string domainfile;
     unsigned int coarserefinements;
 
