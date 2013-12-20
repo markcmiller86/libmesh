@@ -207,7 +207,7 @@ int main(int argc, char** argv)
   // Write out the dataset
   status = nc_close(nc_id);
 
-  return 0;
+  return (status != NC_NOERR);
 }
 
 #else // LIBMESH_HAVE_EXODUS_API

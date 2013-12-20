@@ -381,7 +381,7 @@ void PltLoader::read_header (std::istream& in)
       // marker (357.) is found.
       int nz=0;
       std::vector<std::string> zname;
-      std::vector<int>         zpack, ztype, zimax, zjmax, zkmax, znelem, znnodes;
+      std::vector<int>         zpack, ztype, zimax, zjmax, zkmax;
 
       {
 	float f=0.;

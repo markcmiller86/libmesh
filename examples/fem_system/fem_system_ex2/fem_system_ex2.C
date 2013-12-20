@@ -119,12 +119,10 @@ void run_timestepping(EquationSystems& systems, GetPot& args)
     systems.reinit();
 
     if (t_step % args("output/frequency", 1) == 0) {
-      std::string result;
       std::stringstream file_name;
       file_name << args("results_directory", "./") << "fem_";
       file_name << std::setw(6) << std::setfill('0') << t_step;
       file_name << ".pvtu";
-
 
       io->write_equation_systems(file_name.str(), systems);
     }

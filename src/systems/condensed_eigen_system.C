@@ -52,7 +52,7 @@ void CondensedEigenSystem::initialize_condensed_dofs(std::set<unsigned int>& glo
   std::set<unsigned int>::iterator iter     = global_dirichlet_dofs_set.begin();
   std::set<unsigned int>::iterator iter_end = global_dirichlet_dofs_set.end();
 
-  for ( ; iter != iter_end ; iter++)
+  for ( ; iter != iter_end ; ++iter)
   {
     unsigned int condensed_dof_index = *iter;
     if ( (this->get_dof_map().first_dof() <= condensed_dof_index) &&

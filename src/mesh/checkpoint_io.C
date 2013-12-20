@@ -254,9 +254,6 @@ void CheckpointIO::write_connectivity (Xdr &io) const
     n_elem_at_level[level] = MeshTools::n_elem(it, end);
   }
 
-  typedef std::map<dof_id_type, std::pair<processor_id_type, dof_id_type> > id_map_type;
-  id_map_type parent_id_map, child_id_map;
-
   io.data(n_active_levels, "# n_active_levels");
 
   for(unsigned int level=0; level < n_active_levels; level++)
@@ -441,7 +438,7 @@ void CheckpointIO::read (const std::string& name)
       unsigned int parallel;
       io.data(parallel, "# parallel");
 
-      if(parallel_mesh != parallel)
+      if(static_cast<unsigned int>(parallel_mesh) != parallel)
       {
         libMesh::err << "Attempted to utilize a checkpoint file with an incompatible mesh distribution!" << std::endl;
         libmesh_error();

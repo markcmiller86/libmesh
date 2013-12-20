@@ -450,14 +450,14 @@ void InfElemBuilder::build_inf_elem(const Point& origin,
 	    onodes.insert(side->node(sn));
 
 	  ofaces.insert(p);
-	  face_it++;			// iteration is done here
+	  ++face_it;			// iteration is done here
 	  faces.erase(p);
 
 	  facesfound++;
 	}
 
       else
-	face_it++;			// iteration is done here
+	++face_it;			// iteration is done here
 
 
       // If at least one new oface was found in this cycle,
@@ -542,9 +542,9 @@ void InfElemBuilder::build_inf_elem(const Point& origin,
       // create cell depending on side type, assign nodes,
       // use braces to force scope.
       bool is_higher_order_elem = false;
-      {
-        Elem* el;
-	switch(side->type())
+
+      Elem* el;
+      switch(side->type())
 	{
 	  // 3D infinite elements
 	  // TRIs
@@ -596,45 +596,44 @@ void InfElemBuilder::build_inf_elem(const Point& origin,
 	    continue;
 	}
 
-        // In parallel, assign unique ids to the new element
-        if (!_mesh.is_serial())
-          {
-            Elem *belem = _mesh.elem(p.first);
-            el->processor_id() = belem->processor_id();
-            // We'd better not have elements with more than 6 sides
-            el->set_id (belem->id() * 6 + p.second + old_max_elem_id);
-          }
+      // In parallel, assign unique ids to the new element
+      if (!_mesh.is_serial())
+        {
+          Elem *belem = _mesh.elem(p.first);
+          el->processor_id() = belem->processor_id();
+          // We'd better not have elements with more than 6 sides
+          el->set_id (belem->id() * 6 + p.second + old_max_elem_id);
+        }
 
-	// assign vertices to the new infinite element
-	const unsigned int n_base_vertices = side->n_vertices();
-	for(unsigned int i=0; i<n_base_vertices; i++)
-	  {
-	    el->set_node(i                ) = side->get_node(i);
-	    el->set_node(i+n_base_vertices) = outer_nodes[side->node(i)];
-	  }
-
-
-	// when this is a higher order element,
-	// assign also the nodes in between
-	if (is_higher_order_elem)
-          {
-	    // n_safe_base_nodes is the number of nodes in \p side
-	    // that may be safely assigned using below for loop.
-	    // Actually, n_safe_base_nodes is _identical_ with el->n_vertices(),
-	    // since for QUAD9, the 9th node was already assigned above
-	    const unsigned int n_safe_base_nodes   = el->n_vertices();
-
-	    for(unsigned int i=n_base_vertices; i<n_safe_base_nodes; i++)
-	      {
-	        el->set_node(i+n_base_vertices)   = side->get_node(i);
-	        el->set_node(i+n_safe_base_nodes) = outer_nodes[side->node(i)];
-	      }
-	  }
+      // assign vertices to the new infinite element
+      const unsigned int n_base_vertices = side->n_vertices();
+      for(unsigned int i=0; i<n_base_vertices; i++)
+        {
+          el->set_node(i                ) = side->get_node(i);
+          el->set_node(i+n_base_vertices) = outer_nodes[side->node(i)];
+        }
 
 
-	// add infinite element to mesh
-	this->_mesh.add_elem(el);
-      } // el goes out of scope
+      // when this is a higher order element,
+      // assign also the nodes in between
+      if (is_higher_order_elem)
+        {
+          // n_safe_base_nodes is the number of nodes in \p side
+          // that may be safely assigned using below for loop.
+          // Actually, n_safe_base_nodes is _identical_ with el->n_vertices(),
+          // since for QUAD9, the 9th node was already assigned above
+          const unsigned int n_safe_base_nodes   = el->n_vertices();
+
+          for(unsigned int i=n_base_vertices; i<n_safe_base_nodes; i++)
+            {
+              el->set_node(i+n_base_vertices)   = side->get_node(i);
+              el->set_node(i+n_safe_base_nodes) = outer_nodes[side->node(i)];
+            }
+        }
+
+
+      // add infinite element to mesh
+      this->_mesh.add_elem(el);
     } // for
 
 

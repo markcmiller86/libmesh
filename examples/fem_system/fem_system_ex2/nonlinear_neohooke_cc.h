@@ -37,8 +37,12 @@ using namespace libMesh;
 class NonlinearNeoHookeCurrentConfig {
 public:
   NonlinearNeoHookeCurrentConfig(
-      const std::vector<std::vector<RealGradient> >& dphi_in, GetPot& args) :
-      dphi(dphi_in) {
+      const std::vector<std::vector<RealGradient> >& dphi_in,
+      GetPot& args,
+      bool calculate_linearized_stiffness_in) :
+      dphi(dphi_in),
+      calculate_linearized_stiffness(calculate_linearized_stiffness_in)
+  {
     E = args("material/neohooke/e_modulus", 10000.0);
     nu = args("material/neohooke/nu", 0.3);
   }

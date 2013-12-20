@@ -381,7 +381,7 @@ void UCDIO::write_soln(std::ostream& out_stream, const MeshBase& mesh,
   // We just write out dummy.
   for( std::vector<std::string>::const_iterator var = names.begin();
        var != names.end();
-       var++)
+       ++var)
     {
       libmesh_assert (out_stream.good());
       out_stream << (*var) << ", dummy" << std::endl;

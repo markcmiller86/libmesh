@@ -35,12 +35,12 @@ int main(int argc, char** argv)
   START_LOG("es.read()", "main");
   std::string solnname = argv[2];
 
-  es.read(argv[2],
+  es.read(solnname,
           EquationSystems::READ_HEADER |
           EquationSystems::READ_DATA |
           EquationSystems::READ_ADDITIONAL_DATA |
           EquationSystems::READ_BASIC_ONLY);
-  libMesh::out << "Loaded solution " << argv[2] << std::endl;
+  libMesh::out << "Loaded solution " << solnname << std::endl;
   STOP_LOG("es.read()", "main");
 
   START_LOG("write_equation_systems()", "main");
@@ -64,5 +64,5 @@ int main(int argc, char** argv)
     Nemesis_IO(mesh).write_equation_systems (outputname, es);
 
   STOP_LOG("write_equation_systems()", "main");
-  libMesh::out << "Wrote output " << argv[3] << std::endl;
+  libMesh::out << "Wrote output " << outputname << std::endl;
 }
