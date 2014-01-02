@@ -355,9 +355,12 @@ public:
    */
   virtual void print_matlab(const std::string name="NULL") const
   {
-    libMesh::err << "ERROR: Not Implemented in base class yet!" << std::endl;
-    libMesh::err << "ERROR writing MATLAB file " << name << std::endl;
-    libmesh_error();
+    libmesh_not_implemented();
+  }
+
+  virtual void print_matlab() const
+  {
+    this->print_matlab("NULL");
   }
 
   /**
