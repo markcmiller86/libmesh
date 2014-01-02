@@ -240,6 +240,7 @@ extern OStreamProxy err;
 #ifdef NDEBUG
 
 #define libmesh_assert(asserted)  ((void) 0)
+#define libmesh_exceptionless_assert(asserted)  ((void) 0)
 #define libmesh_assert_msg(asserted, msg)  ((void) 0)
 #define libmesh_assert_equal_to(expr1,expr2)  ((void) 0)
 #define libmesh_assert_not_equal_to(expr1,expr2)  ((void) 0)
@@ -255,6 +256,13 @@ extern OStreamProxy err;
     if (!(asserted)) { \
       libMesh::err << "Assertion `" #asserted "' failed." << std::endl; \
       libmesh_error(); \
+  } } while(0)
+
+#define libmesh_exceptionless_assert(asserted) \
+  do { \
+    if (!(asserted)) { \
+      libMesh::err << "Assertion `" #asserted "' failed." << std::endl; \
+      libmesh_exceptionless_error(); \
   } } while(0)
 
 #define libmesh_assert_msg(asserted, msg) \
@@ -323,6 +331,12 @@ extern OStreamProxy err;
   do { \
     libMesh::MacroFunctions::report_error(__FILE__, __LINE__, __DATE__, __TIME__); \
     LIBMESH_THROW(libMesh::LogicError()); \
+  } while(0)
+
+#define libmesh_exceptionless_error() \
+  do { \
+    libMesh::MacroFunctions::report_error(__FILE__, __LINE__, __DATE__, __TIME__); \
+    std::terminate(); \
   } while(0)
 
 #define libmesh_error_msg(msg) \

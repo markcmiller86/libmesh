@@ -143,14 +143,14 @@ protected:
 // ReferenceCounter class inline methods
 inline ReferenceCounter::ReferenceCounter()
 {
-  _n_objects++;
+  ++_n_objects;
 }
 
 
 
 inline ReferenceCounter::~ReferenceCounter()
 {
-  _n_objects--;
+  --_n_objects;
 }
 
 
