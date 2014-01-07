@@ -84,7 +84,7 @@ namespace libMesh
     if (_system.time - stored_sols->first > TOLERANCE )
       {
 #ifndef NDEBUG
-        stored_sols++;
+        ++stored_sols;
         libmesh_assert (stored_sols == stored_solutions.end());
 #endif
         stored_solutions.push_back

@@ -280,9 +280,6 @@ unsigned int NewtonSolver::solve()
 
   SparseMatrix<Number> &matrix = *(_system.matrix);
 
-  // Prepare to take incomplete steps
-  Real last_residual=0.;
-
   // Set starting linear tolerance
   Real current_linear_tolerance = initial_linear_tolerance;
 
@@ -299,7 +296,9 @@ unsigned int NewtonSolver::solve()
       _system.assembly(true, true);
       rhs.close();
       Real current_residual = rhs.l2_norm();
-      last_residual = current_residual;
+
+      // Prepare to take incomplete steps
+      Real last_residual = current_residual;
 
       if (libmesh_isnan(current_residual))
         {

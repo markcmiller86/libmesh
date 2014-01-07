@@ -158,7 +158,7 @@ public:
    * Set the name of the parameter that we will generate deterministic training parameters for.
    * Defaults to "NONE".
    */
-  void set_deterministic_training_parameter_name(const std::string name);
+  void set_deterministic_training_parameter_name(const std::string& name);
 
   /**
    * Get the name of the parameter that we will generate deterministic training parameters for.
