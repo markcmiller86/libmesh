@@ -77,6 +77,16 @@ netcdf.h: $(top_srcdir)/contrib/netcdf/v4/include/netcdf.h
 
 endif
 
+if LIBMESH_ENABLE_SILO
+
+silo.h: $(top_srcdir)/contrib/silo/src/silo/silo.h
+	$(AM_V_GEN)rm -f $@ && $(LN_S) $< $@
+
+  BUILT_SOURCES  += silo.h
+  DISTCLEANFILES += silo.h
+
+endif
+
 #
 # libmesh_config.h rule
 libmesh_config.h: $(top_builddir)/include/libmesh_config.h
